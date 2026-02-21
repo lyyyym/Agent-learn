@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(C:/Users/31949/.conda/envs/pytorch/python.exe c:/Users/31949/Desktop/agent_learn/Agent-learn/RAG项目/vector_stores.py)",
+      "Bash(C:/Users/31949/.conda/envs/pytorch/python.exe -c:*)",
+      "Bash(C:/Users/31949/.conda/envs/pytorch/python.exe vector_stores.py)",
+      "Bash(C:/Users/31949/.conda/envs/pytorch/python.exe c:/Users/31949/Desktop/agent_learn/Agent-learn/RAG项目/rag.py)",
+      "Bash(C:/Users/31949/.conda/envs/pytorch/python.exe:*)"
+    ]
+  }
+}

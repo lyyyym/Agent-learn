@@ -1,14 +1,24 @@
 # 基于streamlit完成WEB网页上传服务
 from fileinput import filename
 import streamlit as st
+from knowledge_base import KnowledgeBaseService
+
 
 # 添加网页标题
 st.title("文件上传服务")
+
+
 
 # 文件上传
 uploaded_file = st.file_uploader("请上传一个txt文件", 
                                 type=["txt"],
                                 accept_multiple_files=False) # 表示仅接受一个文件的上传
+
+
+
+if "service" not in st.session_state:
+    st.session_state["service"] = KnowledgeBaseService()
+  
 if uploaded_file is not None:
     # 提取文件信息
     file_name = uploaded_file.name
@@ -20,7 +30,10 @@ if uploaded_file is not None:
     st.write(f"文件类型: {file_type}")
     st.write(f"文件大小: {file_size:.2f} KB")
     # 读取文件内容
-    file_content = uploaded_file.read().decode("utf-8")
-    # 显示文件内容
-    st.text_area("文件内容预览", file_content, height=300)
+
+    text = uploaded_file.read().decode("utf-8")
+    
+    st.session_state["service"].add_document(text, file_name)
+    st.success(f"文件 {file_name} 已成功上传并添加到知识库！") 
+
 

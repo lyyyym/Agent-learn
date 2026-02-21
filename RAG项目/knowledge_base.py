@@ -85,7 +85,7 @@ class KnowledgeBaseService(object):
         
         metadata = {
             "source": filename,
-            "create_time": datatime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "create_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "operator": config.operator,
         }
 
