@@ -29,3 +29,6 @@ chat_model = "qwen3-max"
 
 #系统提示
 system_prompt = "以我提供的参考资料为主，简洁和专业的回答用户问题。参考资料：{context}"
+
+
+session_config = {"configurable": {"session_id": "user_001"}}

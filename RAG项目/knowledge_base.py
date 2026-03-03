@@ -3,7 +3,10 @@ from importlib import metadata
 import os
 import config_data as config
 import hashlib
-from langchain_chroma import Chroma
+try:
+    from langchain_chroma import Chroma
+except ModuleNotFoundError:
+    from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from datetime import datetime
